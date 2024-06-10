@@ -1,13 +1,16 @@
 import random
 
 
+print("Welcome to the Brain Games!")
 
-def welcome_user():
+
+def main():
     global name
     name = input('May I have your name? ')
     print("Hello, " + name + "!")
 
 
+print("Answer ""yes"" if the number is even, otherwise answer ""no"".")
 random_num = 0
 
 
@@ -44,7 +47,4 @@ def game_counter():
             break
 
 
-print("Welcome to the Brain Games!")
-welcome_user()
-print("Answer ""yes"" if the number is even, otherwise answer ""no"".")
-game_counter()
+main()
