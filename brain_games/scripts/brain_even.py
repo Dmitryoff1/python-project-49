@@ -8,9 +8,9 @@ def main():
     global name
     name = input('May I have your name? ')
     print("Hello, " + name + "!")
+    print("Answer ""yes"" if the number is even, otherwise answer ""no"".")
 
 
-print("Answer ""yes"" if the number is even, otherwise answer ""no"".")
 random_num = 0
 
 
