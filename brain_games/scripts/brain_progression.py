@@ -10,6 +10,7 @@ def main():
     print("Hello, " + name + "!")
     print("Find the greatest common divisor of given numbers.")
 
+
 def random_nums1():
     global random_num1
     random_num1 = random.randint(1, 20)
@@ -28,18 +29,20 @@ def randoms_index():
     return random_index
 
 
-def arithmetic_progression():
+def arithmetic_prog():
     global lists
     lists = list(range(random_num1, 100, random_num2))
     return lists
 
+
 def len_progression():
-    if len(arithmetic_progression()) >= 10:
+    if len(arithmetic_prog()) >= 10:
         return (lists[0:10])
-    elif len(arithmetic_progression()) < 10 and len(arithmetic_progression()) >= 5:
+    elif len(arithmetic_prog()) < 10 and len(arithmetic_prog()) >= 5:
         return (lists)
     else:
         pass
+
 
 def backspace():
     global symbol
@@ -49,8 +52,6 @@ def backspace():
     spisk[numb] = ".."
     print(' '.join(str(el) for el in spisk))
     print(symbol)
-
-
 
 
 def Even_or_odd():
@@ -70,8 +71,8 @@ def Even_or_odd():
             print(f"'{inp}' is wrong answer ;(. Correct answer was '{symbol}' .")
             print(f"Let's try again, {name}!")
             break
+
+
 main()
 random_nums1()
 random_nums2()
-
-Even_or_odd()

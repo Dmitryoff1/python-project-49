@@ -55,4 +55,3 @@ def Even_or_odd():
 main()
 random_nums1()
 random_nums2()
-#Even_or_odd()
