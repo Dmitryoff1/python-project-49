@@ -31,7 +31,7 @@ def randoms_index():
 
 def arithmetic_prog():
     global lists
-    lists = list(range(random_num1, 100, random_num2))
+    lists = list(range(random_nums1(), 100, random_nums2()))
     return lists
 
 
@@ -51,7 +51,7 @@ def backspace():
     symbol = spisk[numb]
     spisk[numb] = ".."
     print(' '.join(str(el) for el in spisk))
-    print(symbol)
+#    print(symbol)
 
 
 def Even_or_odd():
