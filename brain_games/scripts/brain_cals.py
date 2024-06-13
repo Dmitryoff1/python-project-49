@@ -67,7 +67,7 @@ def Even_or_odd():
             print("Congratulation, " + name)
             break
         else:
-            print(f"{inp} is wrong answer ;(. Correct answer was {summa} .")
+            print(f"'{inp}' is wrong answer ;(. Correct answer was '{summa}' .")
             print(f"Let's try again, {name}!")
             break
 
