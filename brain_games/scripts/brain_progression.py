@@ -51,7 +51,6 @@ def backspace():
     symbol = spisk[numb]
     spisk[numb] = ".."
     print(' '.join(str(el) for el in spisk))
-#    print(symbol)
 
 
 def Even_or_odd():

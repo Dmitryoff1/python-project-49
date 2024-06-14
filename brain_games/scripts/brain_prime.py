@@ -1,8 +1,6 @@
 import random
 
 
-
-
 def main():
     global name
     print("Welcome to the Brain Games!")
@@ -11,6 +9,7 @@ def main():
 
 
 print("Answer 'yes' if given number is prime. Otherwise answer 'no'.")
+
 
 def random_nums():
 
@@ -25,7 +24,7 @@ def prime_nums():
     randoms = random_nums()
     result = randoms in list
     print(randoms)
-    if result == True:
+    if result is True:
         answer = "yes"
         return "yes"
     else:
@@ -33,16 +32,12 @@ def prime_nums():
         return "no"
 
 
-def backspace():
-    return prime_nums()
-
-
 def Even_or_odd():
     count = 0
     while count <= 3:
-
-        backspace()
+        prime_nums()
         inp = input("Your answer:")
+
         if count != 2 and answer == inp:
             count += 1
             print("Correct!")
@@ -55,6 +50,6 @@ def Even_or_odd():
             print(f"'{inp}' is wrong answer ;(. Correct answer was '{answer}' .")
             print(f"Let's try again, {name}!")
             break
+
+
 main()
-#Even_or_odd()
-#Even_or_odd()
