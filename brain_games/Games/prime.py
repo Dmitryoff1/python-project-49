@@ -3,10 +3,10 @@ from typing import Callable
 
 from brain_games.logic.game_logic import run_game
 
-GAME_RULES_PRM = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+RULES_MASSAGE  = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
-MIN_RANDOM_NUMBER = 1
-MAX_RANDOM_NUMBER = 100
+MIN_RANDOM_NUM = 1
+MAX_RANDOM_NUM = 100
 
 
 def is_prime(random_number) -> bool:
@@ -23,13 +23,16 @@ def is_prime(random_number) -> bool:
 
 def generate_game_data() -> tuple:
     # Генерируем данные и задаем вопрос пользователю
-    random_number = randint(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER)
+    random_number = randint(MIN_RANDOM_NUM, MAX_RANDOM_NUM)
     computer_question = f'{random_number}'
 
-    target_result = 'yes' if is_prime(random_number) else 'no'
+    if is_prime(random_number) == True:
+        target_result = 'yes'
+    else:
+        target_result = 'no'
 
     return computer_question, target_result
 
 
 def prime_game() -> Callable:
-    run_game(GAME_RULES_PRM, generate_game_data)
+    run_game(RULES_MASSAGE , generate_game_data)

@@ -3,7 +3,7 @@ from typing import Callable
 
 from brain_games.logic.game_logic import run_game
 
-GAME_RULES_PRG = 'What number is missing in the progression?'
+RULES_MASSAGE  = 'What number is missing in the progression?'
 
 PROGRESSION_START_VALUE_MIN = 1
 PROGRESSION_START_VALUE_MAX = 50
@@ -37,7 +37,7 @@ def generate_game_data() -> tuple:
     for i in range(start_value, progression_max_value, step_value):
         progression.append(str(i))
 
-    # Определяем отбрасываемое число и заменяем его двумя точками
+    # Определяем число и заменяем его двумя точками
     index_skip_value = randint(0, length_value - 1)
     target_result = progression[index_skip_value]
     progression[index_skip_value] = '..'
@@ -49,4 +49,4 @@ def generate_game_data() -> tuple:
 
 
 def progression_game() -> Callable:
-    run_game(GAME_RULES_PRG, generate_game_data)
+    run_game(RULES_MASSAGE , generate_game_data)

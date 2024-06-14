@@ -3,20 +3,20 @@ from typing import NoReturn
 import prompt
 
 GAME_ATTEMPTS = 3
-WELCOME_MESSAGE = 'Welcome to the Brain Games!'
-HELLO_MESSAGE = 'Hello, {}!'
-ASK_NAME_MESSAGE = 'May I have your name? '
+GREETINGS = 'Welcome to the Brain Games!'
+GREETINGS_MESSAGE = 'Hello, {}!'
+ASK_NAME = 'May I have your name? '
 TRUE_ANSWER = 'Correct!'
 FALSE_ANSWER = '''\'{}\' is wrong answer ;(. Correct answer was \'{}\'.
 Let\'s try again, {}!'''
-VICTORY_GAME_MESSAGE = 'Congratulations, {}!'
+VICTORY_MESSAGE = 'Congratulations, {}!'
 
 
 def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
-    # Приветствуем пользователя
-    print(WELCOME_MESSAGE)
-    name = prompt.string(ASK_NAME_MESSAGE)
-    print(HELLO_MESSAGE.format(name))
+    # Приветствуем игрока
+    print(GREETINGS)
+    name = prompt.string(ASK_NAME)
+    print(GREETINGS_MESSAGE.format(name))
 
     # Выводим правила игры, формируем логику игры и генерируем цикл раундов
     print(game_rules)
@@ -39,6 +39,6 @@ def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
         # Исполняется, если последний введенный ответ - правильный
         print(TRUE_ANSWER)
         if game_round == GAME_ATTEMPTS:
-            print(VICTORY_GAME_MESSAGE.format(name))
+            print(VICTORY_MESSAGE.format(name))
 
         game_round += 1
