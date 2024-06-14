@@ -45,10 +45,10 @@ def len_progression():
 
 
 def backspace():
-    global symbol
+    global sym
     spisk = len_progression()
     numb = randoms_index()
-    symbol = spisk[numb]
+    sym = spisk[numb]
     spisk[numb] = ".."
     print(' '.join(str(el) for el in spisk))
 
@@ -58,16 +58,16 @@ def Even_or_odd():
     while count <= 3:
         backspace()
         inp = input("Your answer:")
-        if count != 2 and symbol == int(inp):
+        if count != 2 and sym == int(inp):
             count += 1
             print("Correct!")
-        elif count == 2 and symbol == int(inp):
+        elif count == 2 and sym == int(inp):
             count += 1
             print("Correct!")
             print("Congratulation, " + name)
             break
         else:
-            print(f"'{inp}' is wrong answer ;(. Correct answer was '{symbol}' .")
+            print(f"'{inp}' is wrong answer ;(. Correct answer was '{sym}' .")
             print(f"Let's try again, {name}!")
             break
 

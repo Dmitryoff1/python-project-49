@@ -25,12 +25,11 @@ def random_nums2():
 def print_expression():
     global random_num1
     global random_num2
-    global summa
+    global sun
     random_num1 = random_nums1()
     random_num2 = random_nums2()
     print(f"Question:{random_num1} {random_num2}")
-    summa = math.gcd(random_num1, random_num2)
-#    print(summa)
+    sun = math.gcd(random_num1, random_num2)
 
 
 def Even_or_odd():
@@ -38,16 +37,16 @@ def Even_or_odd():
     while count <= 3:
         print_expression()
         inp = input("Your answer:")
-        if count != 2 and inp == str(summa):
+        if count != 2 and inp == str(sun):
             count += 1
             print("Correct!")
-        elif count == 2 and inp == str(summa):
+        elif count == 2 and inp == str(sun):
             count += 1
             print("Correct!")
             print("Congratulation, " + name)
             break
         else:
-            print(f"'{inp}' is wrong answer ;(. Correct answer was '{summa}' .")
+            print(f"'{inp}' is wrong answer ;(. Correct answer was '{sun}' .")
             print(f"Let's try again, {name}!")
             break
 

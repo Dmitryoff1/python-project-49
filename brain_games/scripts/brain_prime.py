@@ -18,17 +18,17 @@ def random_nums():
 
 
 def prime_nums():
-    global answer
+    global answ
     list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-    answer = ""
+    answ = ""
     randoms = random_nums()
     result = randoms in list
     print(randoms)
     if result is True:
-        answer = "yes"
+        answ = "yes"
         return "yes"
     else:
-        answer = "no"
+        answ = "no"
         return "no"
 
 
@@ -38,16 +38,16 @@ def Even_or_odd():
         prime_nums()
         inp = input("Your answer:")
 
-        if count != 2 and answer == inp:
+        if count != 2 and answ == inp:
             count += 1
             print("Correct!")
-        elif count == 2 and answer == inp:
+        elif count == 2 and answ == inp:
             count += 1
             print("Correct!")
             print("Congratulation, " + name)
             break
         else:
-            print(f"'{inp}' is wrong answer ;(. Correct answer was '{answer}' .")
+            print(f"'{inp}' is wrong answer ;(. Correct answer was '{answ}' .")
             print(f"Let's try again, {name}!")
             break
 

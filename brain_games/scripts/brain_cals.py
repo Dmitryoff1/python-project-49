@@ -42,15 +42,14 @@ def print_expression():
 
 
 def sum_num():
-    global summa
+    global sun
     if math_operation == "+":
-        summa = random_num1 + random_num2
+        sun = random_num1 + random_num2
     elif math_operation == "-":
-        summa = random_num1 - random_num2
+        sun = random_num1 - random_num2
     else:
-        summa = random_num1 * random_num2
-#    print(summa)
-    return summa
+        sun = random_num1 * random_num2
+    return sun
 
 
 def Even_or_odd():
@@ -58,16 +57,16 @@ def Even_or_odd():
     while count <= 3:
         print_expression()
         inp = input("Your answer:")
-        if count != 2 and inp == str(summa):
+        if count != 2 and inp == str(sun):
             count += 1
             print("Correct!")
-        elif count == 2 and inp == str(summa):
+        elif count == 2 and inp == str(sun):
             count += 1
             print("Correct!")
             print("Congratulation, " + name)
             break
         else:
-            print(f"'{inp}' is wrong answer ;(. Correct answer was '{summa}' .")
+            print(f"'{inp}' is wrong answer ;(. Correct answer was '{sun}' .")
             print(f"Let's try again, {name}!")
             break
 
