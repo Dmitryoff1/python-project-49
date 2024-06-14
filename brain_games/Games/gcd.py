@@ -23,4 +23,4 @@ def generate_game_data() -> tuple:
 
 
 def gcd_game() -> Callable:
-    run_game(RULES_MASSAGE , generate_game_data)
+    run_game(RULES_MASSAGE, generate_game_data)

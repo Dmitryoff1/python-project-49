@@ -3,7 +3,7 @@ from typing import Callable
 
 from brain_games.logic.game_logic import run_game
 
-RULES_MASSAGE  = 'What number is missing in the progression?'
+RULES_MASSAGE = 'What number is missing in the progression?'
 
 PROGRESSION_START_VALUE_MIN = 1
 PROGRESSION_START_VALUE_MAX = 50
