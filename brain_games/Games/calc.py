@@ -34,5 +34,5 @@ def generate_game_data() -> tuple:
     return computer_question, target_result
 
 
-def cals_game() -> Callable:
+def calc_game() -> Callable:
     run_game(GAME_RULES_CALC, generate_game_data)

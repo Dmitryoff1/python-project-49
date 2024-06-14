@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-from brain_games.Games.cals import cals_game
+from brain_games.Games.calc import calc_game
 
 
 def main():
-    cals_game()
+    calc_game()
 
 
 if __name__ == '__main__':
