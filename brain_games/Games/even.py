@@ -23,7 +23,7 @@ def generate_game_data() -> tuple:
     computer_question = f'{random_number}'
 
     # Определяем правильный ответ
-    if is_even(random_number) == True:
+    if is_even(random_number) is True:
         target_result = 'yes'
     else:
         target_result = 'no'

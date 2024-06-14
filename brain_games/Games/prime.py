@@ -26,7 +26,7 @@ def generate_game_data() -> tuple:
     random_number = randint(MIN_RANDOM_NUM, MAX_RANDOM_NUM)
     computer_question = f'{random_number}'
 
-    if is_prime(random_number) == True:
+    if is_prime(random_number) is True:
         target_result = 'yes'
     else:
         target_result = 'no'

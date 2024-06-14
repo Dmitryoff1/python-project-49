@@ -49,4 +49,4 @@ def generate_game_data() -> tuple:
 
 
 def progression_game() -> Callable:
-    run_game(RULES_MASSAGE , generate_game_data)
+    run_game(RULES_MASSAGE, generate_game_data)
