@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
-from brain_games.games.gcd import gcd_game
+from brain_games.games.gcd import generate_game_data, RULES_MESSAGE
+from brain_games.logic.game_logic import run_game
 
 
 def main():
-    gcd_game()
+    run_game(RULES_MESSAGE, generate_game_data)
 
 
 if __name__ == '__main__':

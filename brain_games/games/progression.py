@@ -1,27 +1,26 @@
 from random import randint
-from typing import Callable
 
-from brain_games.logic.game_logic import run_game
 
 RULES_MESSAGE = 'What number is missing in the progression?'
 
-PROGRESSION_START_VALUE_MIN = 1
-PROGRESSION_START_VALUE_MAX = 50
+# Data for progression
+START_VALUE_MIN = 1
+START_VALUE_MAX = 50
 
-PROGRESSION_STEP_VALUE_MIN = 3
-PROGRESSION_STEP_VALUE_MAX = 30
+STEP_VALUE_MIN = 3
+STEP_VALUE_MAX = 30
 
-PROGRESSION_LENGTH_VALUE_MIN = 5
-PROGRESSION_LENGTH_VALUE_MAX = 10
+LENGTH_VALUE_MIN = 5
+LENGTH_VALUE_MAX = 10
 
 
 def generate_game_data() -> tuple:
     # We generate data and ask the user a question
     start_value = randint(
-        PROGRESSION_START_VALUE_MIN, PROGRESSION_START_VALUE_MAX
+        START_VALUE_MIN, START_VALUE_MAX
     )
     length_value = randint(
-        PROGRESSION_LENGTH_VALUE_MIN, PROGRESSION_LENGTH_VALUE_MAX
+        LENGTH_VALUE_MIN, LENGTH_VALUE_MAX
     )
 
     # So that the sequence can be descending,
@@ -29,7 +28,7 @@ def generate_game_data() -> tuple:
     # This will save us from the possibility of a zero step with randint(-n, n)
     step_value_sign = (-1) ** randint(1, 2)
     step_value = step_value_sign * randint(
-        PROGRESSION_STEP_VALUE_MIN, PROGRESSION_STEP_VALUE_MAX
+        STEP_VALUE_MIN, STEP_VALUE_MAX
     )
 
     progression = []
@@ -42,8 +41,4 @@ def generate_game_data() -> tuple:
     target_result = progression[index_skip_value]
     progression[index_skip_value] = '..'
     question = " ".join(progression)
-    return question, target_result
-
-
-def progression_game() -> Callable:
-    run_game(RULES_MESSAGE, generate_game_data)
+    return question, str(target_result)

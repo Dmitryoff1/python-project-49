@@ -1,21 +1,18 @@
 from random import randint
-from typing import Callable
 
-from brain_games.logic.game_logic import run_game
 
 RULES_MESSAGE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-
 MIN_RANDOM_NUM = 1
 MAX_RANDOM_NUM = 100
 
 
-def is_prime(random_number) -> bool:
+def is_prime(random_num) -> bool:
 
-    if random_number <= 1:
+    if random_num <= 1:
         return False
 
-    for i in range(2, int(random_number / 2) + 1):
-        if random_number % i == 0:
+    for i in range(2, int(random_num / 2) + 1):
+        if random_num % i == 0:
             return False
 
     return True
@@ -23,16 +20,12 @@ def is_prime(random_number) -> bool:
 
 def generate_game_data() -> tuple:
     # We generate data and ask the user a question
-    random_number = randint(MIN_RANDOM_NUM, MAX_RANDOM_NUM)
-    computer_question = f'{random_number}'
+    random_num = randint(MIN_RANDOM_NUM, MAX_RANDOM_NUM)
+    computer_question = f'{random_num}'
 
-    if is_prime(random_number) is True:
+    if is_prime(random_num) is True:
         target_result = 'yes'
     else:
         target_result = 'no'
 
-    return computer_question, target_result
-
-
-def prime_game() -> Callable:
-    run_game(RULES_MESSAGE, generate_game_data)
+    return computer_question, str(target_result)

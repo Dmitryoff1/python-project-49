@@ -1,10 +1,7 @@
 from random import randint
-from typing import Callable
 
-from brain_games.logic.game_logic import run_game
 
 RULES_MESSAGE = 'Answer "yes" if the number is even, otherwise answer "no".'
-
 MIN_RANDOM_NUM = 1
 MAX_RANDOM_NUM = 100
 
@@ -28,8 +25,4 @@ def generate_game_data() -> tuple:
     else:
         target_result = 'no'
 
-    return question, target_result
-
-
-def even_game() -> Callable:
-    run_game(RULES_MESSAGE, generate_game_data)
+    return question, str(target_result)
