@@ -1,5 +1,7 @@
 <img onerror="this.src='https://github.com/github/docs/actions/workflows/main.yml/badge.svg';" src="https://github.com/Dmitryoff1/python-project-49/actions/workflows/hexlet-check.yml/badge.svg" loading="lazy">
 
+<a href="https://codeclimate.com/github/Dmitryoff1/python-project-49/maintainability"><img src="https://api.codeclimate.com/v1/badges/e7ea09760d496f27b53f/maintainability" /></a>
+
 # Study project No. 1 'Brain Games'
 
 "Brain Games" is a set of five console games. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the game is passed. Incorrect answer ends the game and offers to pass.
