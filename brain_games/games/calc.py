@@ -3,7 +3,7 @@ from typing import Callable
 
 from brain_games.logic.game_logic import run_game
 
-RULES_MASSAGE = 'What is the result of the expression?'
+RULES_MESSAGE = 'What is the result of the expression?'
 
 MIN_RANDOM_NUM = 1
 MAX_RANDOM_NUM = 100
@@ -16,14 +16,14 @@ ARITHMETIC_OPERATIONS = (OPERATOR_MINUS, OPERATOR_PLUS, OPERATOR_MULTIPLY)
 
 
 def generate_game_data() -> tuple:
-    # Генерируем данные и задаем вопрос пользователю
+    # We generate data and ask the user a question
     random_number1 = randint(MIN_RANDOM_NUM, MAX_RANDOM_NUM)
     random_number2 = randint(MIN_RANDOM_NUM, MAX_RANDOM_NUM)
     operation = choice(ARITHMETIC_OPERATIONS)
-    computer_question = f'{random_number1} {operation} {random_number2}'
+    question = f'{random_number1} {operation} {random_number2}'
 
-    # Определяем правильный ответ
-    target_result = False  # Дефолтное значение
+    # Determining the correct answer
+    target_result = False  # Default value
     if operation == OPERATOR_PLUS:
         target_result = random_number1 + random_number2
     elif operation == OPERATOR_MINUS:
@@ -31,8 +31,8 @@ def generate_game_data() -> tuple:
     elif operation == OPERATOR_MULTIPLY:
         target_result = random_number1 * random_number2
 
-    return computer_question, target_result
+    return question, target_result
 
 
 def calc_game() -> Callable:
-    run_game(RULES_MASSAGE, generate_game_data)
+    run_game(RULES_MESSAGE, generate_game_data)

@@ -13,12 +13,12 @@ VICTORY_MESSAGE = 'Congratulations, {}!'
 
 
 def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
-    # Приветствуем игрока
+    # Welcome player
     print(GREETINGS)
     name = prompt.string(ASK_NAME)
     print(GREETINGS_MESSAGE.format(name))
 
-    # Выводим правила игры, формируем логику игры и генерируем цикл раундов
+    # We derive the rules of the game, form the logic of the game and generate a cycle of rounds
     print(game_rules)
     game_round = 1
 
@@ -27,16 +27,16 @@ def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
         print(f'Question: {computer_question}')
         user_answer = prompt.string('Your answer: ')
 
-        # Узнаем правильность ответа
+        # Let's find out the correct answer
         bool_result = str(target_result) == user_answer.lower()
 
-        # ... и в зависимости от выбора ответа вызываем функцию
+        # and depending on the choice of answer, call the function
         if not bool_result:
-            # Исполняется, если последний введенный ответ - неправильный
+            # Executes if the last answer entered is incorrect
             print(FALSE_ANSWER.format(user_answer, target_result, name))
             break
 
-        # Исполняется, если последний введенный ответ - правильный
+        # Executed if the last answer entered is correct
         print(TRUE_ANSWER)
         if game_round == GAME_ATTEMPTS:
             print(VICTORY_MESSAGE.format(name))

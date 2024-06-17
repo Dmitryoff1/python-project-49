@@ -3,7 +3,7 @@ from typing import Callable
 
 from brain_games.logic.game_logic import run_game
 
-RULES_MASSAGE = 'What number is missing in the progression?'
+RULES_MESSAGE = 'What number is missing in the progression?'
 
 PROGRESSION_START_VALUE_MIN = 1
 PROGRESSION_START_VALUE_MAX = 50
@@ -16,7 +16,7 @@ PROGRESSION_LENGTH_VALUE_MAX = 10
 
 
 def generate_game_data() -> tuple:
-    # Генерируем данные и задаем вопрос пользователю
+    # We generate data and ask the user a question
     start_value = randint(
         PROGRESSION_START_VALUE_MIN, PROGRESSION_START_VALUE_MAX
     )
@@ -24,9 +24,9 @@ def generate_game_data() -> tuple:
         PROGRESSION_LENGTH_VALUE_MIN, PROGRESSION_LENGTH_VALUE_MAX
     )
 
-    # Чтобы последовательность могла быть убывающей,
-    # возведем в степень (-1) от 1 до 2 раз в step_value_sign
-    # Это избавит нас от вероятности нулевого шага при randint(-n, n)
+    # So that the sequence can be descending,
+    # raise to the power (-1) from 1 to 2 times in step_value_sign
+    # This will save us from the possibility of a zero step with randint(-n, n)
     step_value_sign = (-1) ** randint(1, 2)
     step_value = step_value_sign * randint(
         PROGRESSION_STEP_VALUE_MIN, PROGRESSION_STEP_VALUE_MAX
@@ -37,16 +37,13 @@ def generate_game_data() -> tuple:
     for i in range(start_value, progression_max_value, step_value):
         progression.append(str(i))
 
-    # Определяем число и заменяем его двумя точками
+    # Determine the number and replace it with two dots
     index_skip_value = randint(0, length_value - 1)
     target_result = progression[index_skip_value]
     progression[index_skip_value] = '..'
-    progression = ' '.join(progression)
-
-    computer_question = f'{progression}'
-
-    return computer_question, target_result
+    question = " ".join(progression)
+    return question, target_result
 
 
 def progression_game() -> Callable:
-    run_game(RULES_MASSAGE, generate_game_data)
+    run_game(RULES_MESSAGE, generate_game_data)

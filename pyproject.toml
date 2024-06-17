@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "a set of five console games built on the principles of popular mobile applications for brain training."
 authors = ["off <rembo151098@gmail.com>"]
 readme = "README.md"
 packages = [
@@ -10,16 +10,14 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.12"
-
-
 prompt = "^0.4.1"
+
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
