@@ -18,7 +18,8 @@ def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
     name = prompt.string(ASK_NAME)
     print(GREETINGS_MESSAGE.format(name))
 
-    # We derive the rules of the game, form the logic of the game and generate a cycle of rounds
+    # We derive the rules of the game,
+    # form the logic of the game and generate a cycle of rounds
     print(game_rules)
     game_round = 1
 
