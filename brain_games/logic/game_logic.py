@@ -2,7 +2,6 @@ from typing import NoReturn
 
 import prompt
 
-GAME_COUNTER = 3
 GREETINGS = 'Welcome to the Brain Games!'
 GREETINGS_MESSAGE = 'Hello, {}!'
 ASK_NAME = 'May I have your name? '
@@ -23,11 +22,10 @@ def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
     print(game_rules)
     game_round = 1
 
-    while game_round <= GAME_COUNTER:
+    for i in range(3):
         question, target_result = generate_game_data()
         print(f'Question: {question}')
         user_answer = prompt.string('Your answer: ')
-
         # Let's find out the correct answer
         is_correct = target_result == user_answer.lower()
 
@@ -35,11 +33,7 @@ def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
         if not is_correct:
             # Executes if the last answer entered is incorrect
             print(FALSE_ANSWER.format(user_answer, target_result, name))
-            break
-
+            return
         # Executed if the last answer entered is correct
         print(TRUE_ANSWER)
-        if game_round == GAME_COUNTER:
     print(VICTORY_MESSAGE.format(name))
-
-        game_round += 1
