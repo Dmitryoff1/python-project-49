@@ -21,7 +21,6 @@ def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
     # form the logic of the game and generate a cycle of rounds
     print(game_rules)
 
-
     for i in range(3):
         question, target_result = generate_game_data()
         print(f'Question: {question}')
