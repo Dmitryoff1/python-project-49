@@ -6,7 +6,7 @@ MIN_RANDOM_NUM = 1
 MAX_RANDOM_NUM = 100
 
 
-def is_even(random_number: int) -> tuple:
+def is_even(random_number: int) -> bool:
 
     if random_number % 2 == 0:
         return True
