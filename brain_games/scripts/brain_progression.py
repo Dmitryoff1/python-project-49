@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from brain_games.games.progression import generate_game_data, RULES_MESSAGE
+from brain_games.games import progression
 from brain_games.logic.game_logic import run_game
 
 
 def main():
-    run_game(RULES_MESSAGE, generate_game_data)
+    run_game(progression)
 
 
 if __name__ == '__main__':

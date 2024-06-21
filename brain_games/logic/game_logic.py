@@ -11,7 +11,7 @@ Let\'s try again, {}!'''
 VICTORY_MESSAGE = 'Congratulations, {}!'
 
 
-def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
+def run_game(game) -> NoReturn:
     # Welcome player
     print(GREETINGS)
     name = prompt.string(ASK_NAME)
@@ -19,10 +19,10 @@ def run_game(game_rules: str, generate_game_data: tuple) -> NoReturn:
 
     # We derive the rules of the game,
     # form the logic of the game and generate a cycle of rounds
-    print(game_rules)
+    print(game.RULES_MESSAGE)
 
     for i in range(3):
-        question, target_result = generate_game_data()
+        question, target_result = game.generate_game_data()
         print(f'Question: {question}')
         user_answer = prompt.string('Your answer: ')
         # Let's find out the correct answer
