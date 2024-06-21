@@ -8,7 +8,5 @@ def main():
     run_game(calc)
 
 
-
-
 if __name__ == '__main__':
     main()
